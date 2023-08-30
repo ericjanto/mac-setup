@@ -5,20 +5,18 @@ new: manual homebrew devtools devfolders casks logins ssh ohmyzsh mackup webdev 
 
 .PHONY:
 old:
-	@echo '!! Verify bitwarden password for hard drive still works !!'
 	@echo 'Perform manual steps on old machine, then press <Enter>'
 	@echo '-------------------------------------------------------------------'
-	@echo '1. Connect hard drive'
-	@echo '2. Back up via time machine'
-	@echo '3. Export network settings onto hard drive'
-	@echo '4. Wireguard > Manage tunnels > Export to hard drive'
-	@echo '5. OneDrive > Check all files are synced'
-	@echo '6. Export lightroom presets to hard drive'
+	@echo '- Connect hard drive'
+	@echo '- Back up via time machine'
+	@echo '- Wireguard > Manage Tunnels > Export Tunnels to ZIP > hard drive'
+	@echo '- OneDrive > Check all files are synced'
+	@echo '- Lightroom CC > Develop > Presets > Export as group > hard drive'
 	@read
 	@echo '-------------------------------------------------------------------'
 	mackup backup -f
 	cd ~/developer/admin/dotfiles
-	git add . ; git commit -m "Update dotfiles" ; git push
+	git add . ; git commit -m "Update dotfiles" ; git push ; cd
 	mackup uninstall
 	cp -R ~/.ssh /Volumes/Eric/Organisation/Setup/ssh/
 	@echo 'Done!'
@@ -27,21 +25,20 @@ old:
 manual:
 	@echo 'Perform manual steps on new machine, then press <Enter>'
 	@echo '-------------------------------------------------------------------'
-	@echo '1. Terminal > ⌘ + , > Profiles > Fontsize > 14'
-	@echo '2. Settings > Keyboard > Input Source > German + English (UK)'
-	@echo '3. Settings > Trackpad > Point & Click > Tracking speed > one right to middle'
-	@echo '4. Settings > Accessibility > Pointer Control > Trackpad Options > Enable dragging > three-finger drag'
-	@echo '5. Settings > Desktop & Dock > Menu Bar > Automatically hide and show the menu bar > Always'
-	@echo '5. Settings > General > Software Update > Install macOS updates'
-	@echo '6. Import network settings'
-	@echo '7. Install bitwarden:'
+	@echo '- Terminal > ⌘ + , > Profiles > Fontsize > 14'
+	@echo '- Settings > Keyboard > Input Source > German + English (UK)'
+	@echo '- Settings > Trackpad > Point & Click > Tracking speed > one right to middle'
+	@echo '- Settings > Accessibility > Pointer Control > Trackpad Options > Enable dragging > three-finger drag'
+	@echo '- Settings > Desktop & Dock > Menu Bar > Automatically hide and show the menu bar > Always'
+	@echo '- Settings > General > Software Update > Install macOS updates'
+	@echo '- Install bitwarden:'
 	@echo '   https://apps.apple.com/app/bitwarden/id1352778147'
-	@echo '8. Install Adobe CC:'
+	@echo '- Install Adobe CC:'
 	@echo '   https://www.adobe.com/creativecloud/desktop-app.html'
-	@echo '9. Load lightroom presets from hard drive'
-	@echo '10. Change images (background, profile)' # TODO
-	@echo 'Finder > Sidebar > Untick iCloud and tags'
-	@echo 'Install Wireguard, load tunnels from hard drive'
+	@echo '- Load lightroom presets from hard drive'
+	@echo '- Change images (background, profile)' # TODO
+	@echo '- Finder > Sidebar > Untick iCloud and tags'
+	@echo '- Install Wireguard, load tunnels from hard drive'
 	@read
 
 .PHONY:
@@ -79,15 +76,15 @@ casks:
 logins:
 	@echo 'Login manually, then press <Enter>'
 	@echo '-------------------------------------------------------------------'
-	@echo 'Bitwarden'
-	@echo 'Adobe CC; then download Lightroom CC)'
-	@echo 'Anki'
-	@echo 'Notion'
-	@echo 'OneDrive'
-	@echo 'Postman'
-	@echo 'Raycast'
-	@echo 'VS Code'
-	@echo 'Zotero'
+	@echo '- Bitwarden'
+	@echo '- Adobe CC; then download Lightroom CC)'
+	@echo '- Anki'
+	@echo '- Notion'
+	@echo '- OneDrive'
+	@echo '- Postman'
+	@echo '- Raycast'
+	@echo '- VS Code'
+	@echo '- Zotero'
 	@read
 
 .PHONY:
