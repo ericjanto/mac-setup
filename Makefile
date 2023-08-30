@@ -35,7 +35,6 @@ manual:
 	@echo '   https://apps.apple.com/app/bitwarden/id1352778147'
 	@echo '- Install Adobe CC:'
 	@echo '   https://www.adobe.com/creativecloud/desktop-app.html'
-	@echo '- Load lightroom presets from hard drive'
 	@echo '- Finder > Sidebar > Untick iCloud and tags'
 	@echo '- Install Wireguard, load tunnels from hard drive'
 	@echo '   https://apps.apple.com/us/app/wireguard/id1451685025'
@@ -56,8 +55,26 @@ devtools:
 
 .PHONY:
 devfolders:
-	@echo 'Creating dev folders'
-	mkdir -p ~/developer/projects ; mkdir ~/developer/uni ; mkdir ~/developer/admin/workspaces
+	@if [ ! -d ~/developer/projects ]; then \
+		mkdir -p ~/developer/projects; \
+		echo "Created directory: ~/developer/projects"; \
+	else \
+		echo "Directory already exists: ~/developer/projects"; \
+	fi
+
+	@if [ ! -d ~/developer/uni ]; then \
+		mkdir ~/developer/uni; \
+		echo "Created directory: ~/developer/uni"; \
+	else \
+		echo "Directory already exists: ~/developer/uni"; \
+	fi
+
+	@if [ ! -d ~/developer/admin/workspaces ]; then \
+		mkdir ~/developer/admin/workspaces; \
+		echo "Created directory: ~/developer/admin/workspaces"; \
+	else \
+		echo "Directory already exists: ~/developer/admin/workspaces"; \
+	fi
 
 .PHONY:
 casks:
@@ -81,7 +98,7 @@ logins:
 	@echo 'Login manually, then press <Enter>'
 	@echo '-------------------------------------------------------------------'
 	@echo '- Bitwarden'
-	@echo '- Adobe CC; then download Lightroom CC)'
+	@echo '- Adobe CC; then download Lightroom CC and load presets from hard drive'
 	@echo '- Anki'
 	@echo '- Notion'
 	@echo '- OneDrive'
