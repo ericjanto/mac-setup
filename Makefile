@@ -36,7 +36,6 @@ manual:
 	@echo '- Install Adobe CC:'
 	@echo '   https://www.adobe.com/creativecloud/desktop-app.html'
 	@echo '- Load lightroom presets from hard drive'
-	@echo '- Change images (background, profile)' # TODO
 	@echo '- Finder > Sidebar > Untick iCloud and tags'
 	@echo '- Install Wireguard, load tunnels from hard drive'
 	@read
@@ -129,8 +128,8 @@ email:
 
 .PHONY:
 misc:
-	@echo 'dozer'
-	@echo 'dozer'
+	@echo '- Change images (background, profile)'
+	@echo '- Configure menu bar with Dozer'
 
 .PHONY:
 backup:
