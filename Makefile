@@ -46,9 +46,13 @@ homebrew:
 	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 	brew update
 
-.PHONY:
+.PHONY: devtools
 devtools:
-	xcode-select --install
+	@if xcode-select -p &>/dev/null; then \
+		echo "Xcode command line tools are already installed."; \
+	else \
+		xcode-select --install; \
+	fi
 
 .PHONY:
 devfolders:
