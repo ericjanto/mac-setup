@@ -35,6 +35,8 @@ manual:
 	@echo '   https://apps.apple.com/app/bitwarden/id1352778147'
 	@echo '- Install Adobe CC:'
 	@echo '   https://www.adobe.com/creativecloud/desktop-app.html'
+	@echo '- Install Microsoft Outlook:'
+	@echo '   https://apps.apple.com/app/microsoft-outlook/id985367838'
 	@echo '- Finder > Sidebar > Untick iCloud and tags'
 	@echo '- Install Wireguard, load tunnels from hard drive'
 	@echo '   https://apps.apple.com/us/app/wireguard/id1451685025'
@@ -83,7 +85,6 @@ casks:
 	brew install --cask calibre
 	brew install --cask dbeaver-community
 	brew install --cask dozer
-	brew install --cask microsoft-outlook
 	brew install --cask notion
 	brew install --cask obsidian
 	brew install --cask onedrive
