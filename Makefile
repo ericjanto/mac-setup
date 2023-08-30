@@ -11,9 +11,9 @@ manual:
 	@echo '1. Back up via time machine'
 	@echo '2. Export network settings onto hard drive'
 	@echo '3. Export network settings'
-	@echo '4. Run `mackup backup -f`
+	@echo '4. Run `mackup backup -f`''
 	@echo '5. Push changes to dotfiles remote repo'
-	@echo '6. Run `mackup uninstall`
+	@echo '6. Run `mackup uninstall`'
 	@echo '7. Make sure OneDrive is synced'
 	@echo '8. Export lightroom presets to hard drive'
 	@echo '9. Wireguard > Manage tunnels > Export to hard drive'
