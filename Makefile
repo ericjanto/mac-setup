@@ -50,7 +50,7 @@ devtools:
 .PHONY:
 devfolders:
 	@echo 'Creating dev folders'
-	mkdir -p ~/Developer/Projects ; mkdir ~/Developer/Uni ; mkdir ~/Developer/Admin/Workspaces
+	mkdir -p ~/developer/projects ; mkdir ~/developer/uni ; mkdir ~/developer/admin/workspaces
 
 .PHONY:
 casks:
@@ -101,8 +101,8 @@ ohmyzsh:
 mackup:
 	@echo 'Restoring mackup backup, ssh pwd in BitWarden'
 	brew install mackup
-	git clone git@github.com:ericjanto/dotfiles.git ~/Developer/Admin/dotfiles
-	cp ~/Developer/Admin/dotfiles/Mackup/.mackup.cfg ~/.mackup.cfg
+	git clone git@github.com:ericjanto/dotfiles.git ~/developer/admin/dotfiles
+	cp ~/developer/admin/dotfiles/Mackup/.mackup.cfg ~/.mackup.cfg
 	mackup restore
 	@echo 'Done!'
 
