@@ -1,4 +1,5 @@
 Steps:
+- Run `make old` on old machine
 - `mkdir -p ~/developer/admin && git clone git@github.com:ericjanto/mac-setup.git ~/developer/admin/mac-setup/`
 - `cd ~/developer/admin/`
 - `make`

@@ -1,24 +1,30 @@
-.DEFAULT_GOAL: all
+.DEFAULT_GOAL: new
 
 .PHONY:
-all: manual homebrew devtools devfolders casks logins ssh ohmyzsh mackup webdev pythondev email misc backup macossh
+new: manual homebrew devtools devfolders casks logins ssh ohmyzsh mackup webdev pythondev email misc backup macossh
 
 .PHONY:
-manual:
+old:
 	@echo '!! Verify bitwarden password for hard drive still works !!'
 	@echo 'Perform manual steps on old machine, then press <Enter>'
 	@echo '-------------------------------------------------------------------'
-	@echo '1. Back up via time machine'
-	@echo '2. Export network settings onto hard drive'
-	@echo '3. Export network settings'
-	@echo '4. Run `mackup backup -f`'
-	@echo '5. Push changes to dotfiles remote repo'
-	@echo '6. Run `mackup uninstall`'
-	@echo '7. Make sure OneDrive is synced'
-	@echo '8. Export lightroom presets to hard drive'
-	@echo '9. Wireguard > Manage tunnels > Export to hard drive'
-	cp -R ~/.ssh /Volumes/Eric/Organisation/Setup/ssh/
+	@echo '1. Connect hard drive'
+	@echo '2. Back up via time machine'
+	@echo '3. Export network settings onto hard drive'
+	@echo '4. Wireguard > Manage tunnels > Export to hard drive'
+	@echo '5. OneDrive > Check all files are synced'
+	@echo '6. Export lightroom presets to hard drive'
 	@read
+	@echo '-------------------------------------------------------------------'
+	mackup backup -f
+	cd ~/developer/admin/dotfiles
+	git add . ; git commit -m "Update dotfiles" ; git push
+	mackup uninstall
+	cp -R ~/.ssh /Volumes/Eric/Organisation/Setup/ssh/
+	@echo 'Done!'
+
+.PHONY:
+manual:
 	@echo 'Perform manual steps on new machine, then press <Enter>'
 	@echo '-------------------------------------------------------------------'
 	@echo '1. Terminal > ⌘ + , > Profiles > Fontsize > 14'
