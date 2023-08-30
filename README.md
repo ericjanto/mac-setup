@@ -1,5 +1,6 @@
 Steps:
-- `git clone git@github.com:ericjanto/mac-setup.git ~/Developer/Admin/`
+- `mkdir -p ~/developer/admin && git clone git@github.com:ericjanto/mac-setup.git ~/developer/admin/`
+- `cd ~/developer/admin/`
 - `make`
 
 TODO:

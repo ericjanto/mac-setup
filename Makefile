@@ -11,12 +11,12 @@ manual:
 	@echo '1. Back up via time machine'
 	@echo '2. Export network settings onto hard drive'
 	@echo '3. Export network settings'
-	mackup backup -f
-	@echo '4. Push changes to dotfiles remote repo'
-	mackup uninstall
-	@echo '5. Make sure OneDrive is synced'
-	@echo '6. Export lightroom presets to hard drive'
-	@echo '7. Wireguard > Manage tunnels > Export to hard drive'
+	@echo '4. Run `mackup backup -f`
+	@echo '5. Push changes to dotfiles remote repo'
+	@echo '6. Run `mackup uninstall`
+	@echo '7. Make sure OneDrive is synced'
+	@echo '8. Export lightroom presets to hard drive'
+	@echo '9. Wireguard > Manage tunnels > Export to hard drive'
 	cp -R ~/.ssh /Volumes/Eric/Organisation/Setup/ssh/
 	@read
 	@echo 'Perform manual steps on new machine, then press <Enter>'
