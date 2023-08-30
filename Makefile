@@ -38,11 +38,12 @@ manual:
 	@echo '- Load lightroom presets from hard drive'
 	@echo '- Finder > Sidebar > Untick iCloud and tags'
 	@echo '- Install Wireguard, load tunnels from hard drive'
+	@echo '   https://apps.apple.com/us/app/wireguard/id1451685025'
 	@read
 
 .PHONY:
 homebrew:
-	/bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+	/bin/zsh -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 	brew update
 
 .PHONY:
@@ -97,7 +98,7 @@ ssh:
 
 .PHONY:
 ohmyzsh:
-	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	sh -c "$$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 .PHONY:
 mackup:
