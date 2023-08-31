@@ -11,6 +11,7 @@ old:
 	@echo '- Back up via time machine'
 	@echo '- Wireguard > Manage Tunnels > Export Tunnels to ZIP > hard drive'
 	@echo '- OneDrive > Check all files are synced'
+	@echo '- Back up archived / snoozed emails'
 	@echo '- Lightroom CC > Develop > Presets > Export as group > hard drive'
 	@read
 	@echo '-------------------------------------------------------------------'
