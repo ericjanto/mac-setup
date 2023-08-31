@@ -125,6 +125,8 @@ ohmyzsh:
 	sh -c "$$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	@echo 'Done!'
 
+# TODO: ohmyzsh target terminates
+
 .PHONY:
 mackup:
 	@echo 'Restoring mackup backup, ssh pwd in BitWarden'
