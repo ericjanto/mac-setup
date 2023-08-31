@@ -11,6 +11,7 @@ old:
 	@echo '- Back up via time machine'
 	@echo '- Wireguard > Manage Tunnels > Export Tunnels to ZIP > hard drive'
 	@echo '- OneDrive > Check all files are synced'
+	@echo '- Raycast > Export settings to hard drive'
 	@echo '- Back up archived / snoozed emails'
 	@echo '- Lightroom CC > Develop > Presets > Export as group > hard drive'
 	@read
@@ -105,7 +106,7 @@ logins:
 	@echo '- Notion'
 	@echo '- OneDrive'
 	@echo '- Postman'
-	@echo '- Raycast'
+	@echo '- Raycast; Raycast > Import Settings & Data from hard drive'
 	@echo '- VS Code'
 	@echo '- Zotero'
 	@read
@@ -122,6 +123,7 @@ ssh:
 .PHONY:
 ohmyzsh:
 	sh -c "$$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	@echo 'Done!'
 
 .PHONY:
 mackup:
