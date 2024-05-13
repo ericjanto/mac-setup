@@ -12,6 +12,7 @@ old:
 	@echo '- Wireguard > Manage Tunnels > Export Tunnels to ZIP > hard drive'
 	@echo '- OneDrive > Check all files are synced'
 	@echo '- Raycast > Export settings to hard drive'
+	@echo '- AnOtterRSS > Export RSS feed to hard drive'
 	@echo '- Back up archived / snoozed emails'
 	@echo '- Lightroom CC > Develop > Presets > Export as group > hard drive'
 	@read
@@ -42,6 +43,7 @@ manual:
 	@echo '- Finder > Sidebar > Untick iCloud and tags'
 	@echo '- Install Wireguard, load tunnels from hard drive'
 	@echo '   https://apps.apple.com/us/app/wireguard/id1451685025'
+	@echo '- Install AnOtterRSS from the App Store, load rss feed from hard drive'
 	@read
 
 .PHONY:
@@ -125,6 +127,8 @@ ohmyzsh:
 	sh -c "$$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	@echo 'Done!'
 
+# TODO: ohmyzsh target terminates
+
 .PHONY:
 mackup:
 	@echo 'Restoring mackup backup, ssh pwd in BitWarden'
@@ -138,14 +142,14 @@ mackup:
 webdev:
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | zsh
 	nvm install node
-	nvm use node
 	npm install -g pnpm
 
 .PHONY:
 pythondev:
 	brew install pyenv
-	curl -sSL https://install.python-poetry.org | python3 -
 	eval "$(pyenv init -)"
+	curl -sSL https://install.python-poetry.org | python3 -
+	echo 'export PATH="/Users/ericjanto/.local/bin:$PATH"' >> ~/.zshrc
 
 .PHONY:
 email:
@@ -154,7 +158,7 @@ email:
 
 .PHONY:
 misc:
-	@echo '- Change images (background, profile)'
+	@echo '- Change images (Settings > Wallpaper, profile)'
 	@echo '- Configure menu bar with Dozer'
 
 .PHONY:
