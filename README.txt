@@ -7,6 +7,7 @@ streamline setting up a new Mac.
 make old
 
 * New machine *
+make ssh
 mkdir -p ~/developer/admin && git clone git@github.com:ericjanto/mac-setup.git ~/developer/admin/mac-setup/
 cd ~/developer/admin/
 make
