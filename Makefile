@@ -89,6 +89,7 @@ casks:
 	brew install --cask calibre
 	brew install --cask dbeaver-community
 	brew install --cask dozer
+	brew install --cask firefox
 	brew install --cask notion
 	brew install --cask obsidian
 	brew install --cask onedrive
