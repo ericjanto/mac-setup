@@ -1,7 +1,7 @@
 .DEFAULT_GOAL: new
 
 .PHONY:
-new: manual homebrew devtools devfolders casks logins ssh ohmyzsh mackup webdev pythondev email misc backup macossh
+new: manual devtools homebrew ssh devfolders casks logins mackup webdev pythondev bookmarks email misc backup ohmyzsh macossh
 
 .PHONY:
 old:
@@ -48,11 +48,6 @@ manual:
 	@echo '- Install AnOtterRSS from the App Store, load rss feed from hard drive'
 	@read
 
-.PHONY:
-homebrew:
-	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-	brew update
-
 .PHONY: devtools
 devtools:
 	@if xcode-select -p &>/dev/null; then \
@@ -60,6 +55,11 @@ devtools:
 	else \
 		xcode-select --install; \
 	fi
+
+.PHONY:
+homebrew:
+	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+	brew update
 
 .PHONY:
 devfolders:
@@ -83,6 +83,15 @@ devfolders:
 	else \
 		echo "Directory already exists: ~/developer/admin/workspaces"; \
 	fi
+
+.PHONY:
+ssh:
+	@echo 'Connect hard drive, pwd via BitWarden, then press <Enter>'
+	@read
+	@echo 'Copying SSH keys'
+	cp -R /Volumes/Eric/Organisation/Setup/ssh/.ssh ~/.ssh
+	chmod 700 ~/.ssh
+	chmod 600 ~/.ssh/*
 
 .PHONY:
 casks:
@@ -117,15 +126,6 @@ logins:
 	@read
 
 .PHONY:
-ssh:
-	@echo 'Connect hard drive, pwd via BitWarden, then press <Enter>'
-	@read
-	@echo 'Copying SSH keys'
-	cp -R /Volumes/Eric/Organisation/Setup/ssh/.ssh ~/.ssh
-	chmod 700 ~/.ssh
-	chmod 600 ~/.ssh/*
-
-.PHONY:
 ohmyzsh:
 	sh -c "$$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	@echo 'Done!'
@@ -153,6 +153,17 @@ pythondev:
 	eval "$(pyenv init -)"
 	curl -sSL https://install.python-poetry.org | python3 -
 	echo 'export PATH="/Users/ericjanto/.local/bin:$PATH"' >> ~/.zshrc
+
+.PHONY:
+bookmarks:
+	mkdir -p ~/developer/projects/bookmarks-private
+	cd ~/developer/projects/bookmarks-private
+	git clone git@github.com:ericjanto/bookmarks-private.git
+	cp com.ericjanto.bookmarks.plist ~/Library/LaunchAgents/com.ericjanto.bookmarks.plist
+	launchctl load ~/Library/LaunchAgents/com.ericjanto.bookmarks.plist
+	launchctl list | grep com.ericjanto.bookmarks.plist
+	@echo 'If the last command returns a PID, the bookmarks server is running at http://localhost:8000'
+	@read
 
 .PHONY:
 email:
