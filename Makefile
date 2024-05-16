@@ -22,6 +22,8 @@ old:
 	git add . ; git commit -m "Update dotfiles" ; git push ; cd
 	mackup uninstall
 	cp -R ~/.ssh /Volumes/Eric/Organisation/Setup/ssh/
+	cd ~/developer/projects/bookmarks-private
+	git add . ; git commit -m "update bookmarks" ; git push ; cd
 	@echo 'Done!'
 
 .PHONY:
