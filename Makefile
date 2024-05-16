@@ -156,8 +156,8 @@ pythondev:
 
 .PHONY:
 bookmarks:
-	mkdir -p ~/developer/projects/bookmarks-private
-	cd ~/developer/projects/bookmarks-private
+	mkdir -p ~/developer/admin/bookmarks-private
+	cd ~/developer/admin/bookmarks-private
 	git clone git@github.com:ericjanto/bookmarks-private.git
 	cp com.ericjanto.bookmarks.plist ~/Library/LaunchAgents/com.ericjanto.bookmarks.plist
 	launchctl load ~/Library/LaunchAgents/com.ericjanto.bookmarks.plist
