@@ -151,6 +151,7 @@ webdev:
 pythondev:
 	brew install pyenv
 	eval "$(pyenv init -)"
+	brew install micromamba
 	curl -sSL https://install.python-poetry.org | python3 -
 	echo 'export PATH="/Users/ericjanto/.local/bin:$PATH"' >> ~/.zshrc
 
